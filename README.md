@@ -2,6 +2,13 @@
 
 This repo serves as a boilerplate project for golang web applications.
 
+## System Requirements
+
+* [Golang](https://golang.org/)
+* [PostgreSQL](https://www.postgresql.org/)
+
+If you don't want PostgreSQL, you may remove PostgreSQL related code from this repo by yourself.
+
 ## Usage
 
 Pending.
