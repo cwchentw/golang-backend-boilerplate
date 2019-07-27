@@ -40,7 +40,7 @@ func main() {
 		}
 	}
 
-  /* Use PostgreSQL for persistent data storage */
+	/* Use PostgreSQL for persistent data storage */
 	var err error
 	db, err = gorm.Open("postgres",
 		fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable",
@@ -54,7 +54,7 @@ func main() {
 	}
 	defer db.Close()
 
-  /* Set the routes for the web application. */
+	/* Set the routes for the web application. */
 	mux := httprouter.New()
 	// Handle HTTP 404
 	mux.NotFound = http.HandlerFunc(notFoundHandler)
@@ -74,7 +74,7 @@ func main() {
 	n.Use(negronilogrus.NewMiddlewareFromLogger(l, "web"))
 	n.UseHandler(mux)
 
-  /* Create the main server object */
+	/* Create the main server object */
 	server := http.Server{
 		Addr:    fmt.Sprintf("%s:%s", host, port),
 		Handler: n,
