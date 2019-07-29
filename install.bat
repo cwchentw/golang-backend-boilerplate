@@ -1,3 +1,4 @@
+go get -u github.com/joho/godotenv
 go get -u github.com/julienschmidt/httprouter
 go get -u github.com/sirupsen/logrus
 go get -u github.com/urfave/negroni

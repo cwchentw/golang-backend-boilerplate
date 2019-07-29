@@ -1,4 +1,4 @@
-ackage main
+package main
 
 import (
 	"fmt"
@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jinzhu/gorm"
+	"github.com/joho/godotenv"
 	negronilogrus "github.com/meatballhat/negroni-logrus"
 
 	_ "github.com/jinzhu/gorm/dialects/postgres"
@@ -19,6 +20,11 @@ import (
 var db *gorm.DB
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Warn("Error loading .env file")
+	}
+
 	host := "127.0.0.1"
 	port := "8080"
 
@@ -41,7 +47,6 @@ func main() {
 	}
 
 	/* Use PostgreSQL for persistent data storage */
-	var err error
 	db, err = gorm.Open("postgres",
 		fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=disable",
 			os.Getenv("DB_HOST"),
