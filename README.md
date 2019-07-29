@@ -38,7 +38,7 @@ $ cd myapp
 You should always reset the path to remote repo for your own web application:
 
 ```
-$ git remote set-url origin path/to/remote
+$ git remote set-url origin path/to/remote/repo
 ```
 
 ### Install dependencies
